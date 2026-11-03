@@ -1,0 +1,15 @@
+USE TokoRetailDB;
+GO
+
+PRINT 'Data Produk SEBELUM Delete:';
+SELECT * FROM Produk WHERE SKU = 'BUK-001';
+
+BEGIN TRANSACTION;
+
+DELETE FROM Produk
+WHERE SKU = 'BUK-001';
+
+PRINT 'Data Produk SETELAH Delete (Belum di-COMMIT):';
+SELECT * FROM Produk WHERE SKU = 'BUK-001'; -- Harusnya kosong
+
+COMMIT TRANSACTION;
