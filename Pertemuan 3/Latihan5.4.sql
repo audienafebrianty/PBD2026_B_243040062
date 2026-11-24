@@ -1,0 +1,5 @@
+SELECT Name, ListPrice
+FROM Production.Product
+ORDER BY ListPrice DESC
+OFFSET 10 ROWS
+FETCH NEXT 5 ROWS ONLY;
